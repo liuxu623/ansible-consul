@@ -5,6 +5,7 @@
 
     {## Node ##}
     "node_name": "{{ consul_node_name }}",
+    "node_id": "{{ consul_node_name | to_uuid }}",
     "datacenter": "{{ consul_datacenter }}",
     "domain": "{{ consul_domain }}",
     {% if consul_version is version_compare('0.7.3', '>=') and consul_node_meta | length > 0 %}
